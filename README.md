@@ -11,7 +11,7 @@ Memory Management: Optimized memory usage with garbage collection and monitoring
 Visualization: Graph visualization of the RAG pipeline workflow
 
 Project Structure
-복사llama_modular_rag/
+llama_modular_rag/
 ├── config.py               # Environment settings and constants
 ├── data_loader.py          # PDF loading and vector store creation
 ├── embeddings.py           # Embedding model setup
