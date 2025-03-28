@@ -1,3 +1,4 @@
+'''
 Modular RAG System with Llama 3.2 & LangGraph
 A CPU-optimized Retrieval-Augmented Generation (RAG) system built with LangChain and LangGraph, designed to run efficiently on regular computers without requiring GPU acceleration.
 Features
@@ -10,7 +11,6 @@ Query Caching: Stores previous query results to improve response time
 Memory Management: Optimized memory usage with garbage collection and monitoring
 Visualization: Graph visualization of the RAG pipeline workflow
 
-'''
 Project Structure
 llama_modular_rag/
 ├── config.py               # Environment settings and constants
@@ -25,7 +25,6 @@ llama_modular_rag/
 ├── graph_builder.py        # Graph configuration
 └── main.py                 # Main execution file
 Installation
-'''
 
 Clone the repository:
 
@@ -88,3 +87,4 @@ MIT License
 Acknowledgments
 
 This project uses LangChain and LangGraph
+'''
