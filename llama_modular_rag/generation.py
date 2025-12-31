@@ -1,3 +1,4 @@
+from typing import Dict, Any
 from langchain.prompts import PromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 from state import RAGState
@@ -21,9 +22,14 @@ def answer_generator(state: RAGState) -> RAGState:
     )
 
     answer_chain = answer_prompt | llm | StrOutputParser()
-    answer = answer_chain.invoke({
-        "context": state.get("context", ""),
-        "query": state["query"]
+    
+    context: str = state.get("context", "")
+    query: str = state["query"]
+    
+    answer: str = answer_chain.invoke({
+        "context": context,
+        "query": query
     })
 
-    return {**state, "answer": answer}
+    result: Dict[str, Any] = {**state, "answer": answer}
+    return result

@@ -1,3 +1,4 @@
+from typing import Dict, Any
 from langchain.prompts import PromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 from state import RAGState
@@ -18,6 +19,9 @@ def query_rewriter(state: RAGState) -> RAGState:
     )
 
     rewrite_chain = rewrite_prompt | llm | StrOutputParser()
-    rewritten_query = rewrite_chain.invoke({"query": state["query"]})
+    
+    query: str = state["query"]
+    rewritten_query: str = rewrite_chain.invoke({"query": query})
 
-    return {**state, "rewritten_query": rewritten_query}
+    result: Dict[str, Any] = {**state, "rewritten_query": rewritten_query}
+    return result

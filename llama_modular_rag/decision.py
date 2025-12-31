@@ -1,3 +1,4 @@
+from typing import Dict, Any
 from langchain.prompts import PromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 from state import RAGState
@@ -16,9 +17,13 @@ def needs_more_context(state: RAGState) -> str:
     )
 
     decision_chain = decision_prompt | llm | StrOutputParser()
-    decision = decision_chain.invoke({
-        "query": state["query"],
-        "answer": state.get("refined_answer", "")
+    
+    query: str = state["query"]
+    refined_answer: str = state.get("refined_answer", "")
+    
+    decision: str = decision_chain.invoke({
+        "query": query,
+        "answer": refined_answer
     }).strip().lower()
 
     if "아니" in decision or "no" in decision:

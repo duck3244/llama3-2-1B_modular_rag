@@ -1,29 +1,27 @@
-# LangChain 및 코어 구성 요소
-langchain>=0.3.21
-langchain-community>=0.3.20
-langchain-core>=0.3.47
-langchain-huggingface>=0.1.2
-langgraph>=0.3.18
+# LangChain 및 코어 구성 요소 (Python 3.10 호환)
+langchain>=0.1.0,<0.3.0
+langchain-community>=0.0.20,<0.3.0
+langchain-core>=0.1.0,<0.3.0
+langchain-huggingface>=0.0.1
+langgraph>=0.0.26,<0.3.0
 
 # 벡터 데이터베이스 및 임베딩
-chromadb>=0.6.3
+chromadb>=0.4.22,<0.6.0
 faiss-cpu>=1.7.4
-sentence-transformers>=4.0.1
+sentence-transformers>=2.2.0,<4.0.0
 
 # 문서 처리
-pypdf>=4.0.1
+pypdf>=3.17.0,<4.0.0
 
 # LLM 및 모델
-transformers>=4.50.0
-torch>=2.6.0
-llama-cpp-python>=0.2.58
-accelerate>=1.5.2
-bitsandbytes>=0.45.4
+transformers>=4.35.0,<5.0.0
+torch>=2.0.0,<2.6.0
+accelerate>=0.25.0
 
 # 시각화 및 성능 모니터링
-graphviz>=0.20.3
-psutil>=7.0.0
+graphviz>=0.20.0
+psutil>=5.9.0
 
 # 유틸리티
-numpy>=1.26.4
-tqdm>=4.67.1
+numpy>=1.24.0,<2.0.0
+tqdm>=4.65.0
