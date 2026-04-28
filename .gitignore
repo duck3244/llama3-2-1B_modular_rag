@@ -176,3 +176,7 @@ frontend/.vite/
 .DS_Store
 Thumbs.db
 *.swp
+
+# 위쪽의 파이썬 패키징용 lib/ 패턴이 frontend/src/lib/까지 매칭하는 것을 방지
+!frontend/src/lib/
+!frontend/src/lib/**
